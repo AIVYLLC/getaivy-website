@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>See If You're a Fit | AIVY Solutions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green: #4DC831;
+      --green-dark: #3AAB20;
+      --green-deeper: #2D8A17;
+      --green-pale: #EBF9E6;
+      --green-light: #F2FCF0;
+      --green-mid: #C6F0BC;
+      --white: #FFFFFF;
+      --gray-100: #F0F7EE;
+      --gray-200: #D8EDD3;
+      --gray-400: #8AAF84;
+      --gray-600: #4A6B45;
+      --gray-900: #0F1F0D;
+      --border: #D8EDD3;
+      --shadow: rgba(58, 171, 32, 0.12);
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--green-light);
+      color: var(--gray-900);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1rem 5rem;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo img { height: 44px; width: auto; display: block; }
+    .nav-back {
+      color: var(--gray-600); text-decoration: none;
+      font-size: 0.875rem; font-weight: 500;
+      display: flex; align-items: center; gap: 0.4rem;
+      transition: color 0.2s;
+    }
+    .nav-back:hover { color: var(--green-dark); }
+
+    .page-wrap {
+      min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      padding: 9rem 2rem 5rem;
+    }
+
+    .form-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 3.5rem;
+      width: 100%;
+      max-width: 680px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.07);
+    }
+
+    .section-tag {
+      font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--green-deeper); font-weight: 700; margin-bottom: 0.8rem;
+      display: flex; align-items: center; gap: 0.6rem;
+    }
+    .section-tag::before {
+      content: ''; display: block; width: 24px; height: 2px; background: var(--green);
+    }
+
+    h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 800; line-height: 1.1;
+      letter-spacing: -0.03em;
+      color: var(--gray-900); margin-bottom: 0.8rem;
+    }
+    .form-card > p {
+      color: var(--gray-600); font-size: 1rem;
+      font-weight: 300; line-height: 1.8; margin-bottom: 2.5rem;
+    }
+
+    form { display: flex; flex-direction: column; gap: 1.2rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+    .form-group label {
+      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--gray-600);
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: var(--gray-100); border: 1px solid var(--border);
+      border-radius: 2px; padding: 0.85rem 1rem;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.95rem; color: var(--gray-900);
+      transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+      outline: none; width: 100%;
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: var(--gray-400); }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      background: var(--white);
+      border-color: var(--green);
+      box-shadow: 0 0 0 3px rgba(77,200,49,0.12);
+    }
+    .form-group select {
+      appearance: none; cursor: pointer; padding-right: 2.5rem;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath fill='%234A6B45' d='M5 6L0 0h10z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 1rem center;
+      background-color: var(--gray-100);
+    }
+    .form-group select:focus { background-color: var(--white); }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+
+    .form-submit {
+      background: var(--green); color: #fff;
+      font-family: 'Syne', sans-serif; font-weight: 700;
+      font-size: 1rem; letter-spacing: 0.04em;
+      padding: 1.1rem 2.6rem; border-radius: 2px; border: none;
+      cursor: pointer; transition: all 0.2s; width: 100%;
+      box-shadow: 0 4px 20px rgba(77,200,49,0.3);
+      margin-top: 0.4rem;
+    }
+    .form-submit:hover {
+      background: var(--green-dark); transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(77,200,49,0.4);
+    }
+    .form-note {
+      font-size: 0.78rem; color: var(--gray-400);
+      text-align: center; margin-top: 0.6rem;
+    }
+
+    @media (max-width: 640px) {
+      nav { padding: 1rem 1.5rem; }
+      .form-card { padding: 2rem 1.5rem; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html"><img src="logo.jpg" alt="AIVY Solutions" /></a>
+  <a class="nav-back" href="index.html">← Back to site</a>
+</nav>
+
+<div class="page-wrap">
+  <div class="form-card">
+    <div class="section-tag">See If You're a Fit</div>
+    <h1>Tell Us About Your Business</h1>
+    <p>We work with a select number of partners at a time. Fill this out and we'll review your info — if it's a match, we'll get you booked for a call right away.</p>
+
+    <form name="fit-application" method="POST" action="/thank-you.html" netlify data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="fit-application" />
+      <p style="display:none"><input name="bot-field" /></p>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="Jane Smith" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="jane@yourbiz.com" required />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="industry">Industry</label>
+          <select id="industry" name="industry" required>
+            <option value="" disabled selected>Select your industry</option>
+            <option>E-Commerce</option>
+            <option>Healthcare / Wellness</option>
+            <option>Professional Services</option>
+            <option>Real Estate</option>
+            <option>Construction / Trades</option>
+            <option>Food &amp; Beverage</option>
+            <option>Logistics / Distribution</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="time-in-business">Time in Business</label>
+          <select id="time-in-business" name="time_in_business" required>
+            <option value="" disabled selected>How long have you been running?</option>
+            <option>Less than 1 year</option>
+            <option>1–3 years</option>
+            <option>3–10 years</option>
+            <option>10+ years</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="team-size">Team Size</label>
+          <select id="team-size" name="team_size" required>
+            <option value="" disabled selected>How many people?</option>
+            <option>Solo / Just me</option>
+            <option>2–10</option>
+            <option>11–50</option>
+            <option>50+</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="revenue">Monthly Revenue</label>
+          <select id="revenue" name="monthly_revenue" required>
+            <option value="" disabled selected>Approximate monthly revenue</option>
+            <option>Under $10k</option>
+            <option>$10k – $50k</option>
+            <option>$50k – $200k</option>
+            <option>$200k+</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="bottleneck">Biggest Operational Bottleneck</label>
+        <textarea id="bottleneck" name="bottleneck" placeholder="What's the one thing slowing your business down the most right now?" required></textarea>
+      </div>
+      <div>
+        <button type="submit" class="form-submit">See If I'm a Fit →</button>
+        <p class="form-note">We review every submission personally. If you're a fit, you'll book a call right after this.</p>
+      </div>
+    </form>
+  </div>
+</div>
+
+</body>
+</html>

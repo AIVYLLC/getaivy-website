@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>You're In | AIVY Solutions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --green: #4DC831; --green-dark: #3AAB20; --green-deeper: #2D8A17;
+      --green-pale: #EBF9E6; --green-light: #F2FCF0; --green-mid: #C6F0BC;
+      --white: #FFFFFF; --gray-400: #8AAF84; --gray-600: #4A6B45;
+      --gray-900: #0F1F0D; --border: #D8EDD3;
+    }
+    body {
+      background: var(--green-light);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      min-height: 100vh; display: flex; align-items: center; justify-content: center;
+      padding: 2rem;
+    }
+    .card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 4px; padding: 4rem 3.5rem;
+      max-width: 520px; width: 100%; text-align: center;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.07);
+    }
+    .check {
+      width: 64px; height: 64px; background: var(--green-pale);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 2rem; font-size: 1.8rem;
+    }
+    h1 {
+      font-family: 'Syne', sans-serif; font-size: 2rem;
+      font-weight: 800; color: var(--gray-900);
+      letter-spacing: -0.03em; margin-bottom: 1rem;
+    }
+    p { color: var(--gray-600); font-size: 1rem; font-weight: 300; line-height: 1.8; margin-bottom: 2rem; }
+    .btn {
+      background: var(--green); color: #fff;
+      font-family: 'Syne', sans-serif; font-weight: 700;
+      font-size: 0.95rem; letter-spacing: 0.04em;
+      padding: 1rem 2.4rem; border-radius: 2px;
+      text-decoration: none; display: inline-block;
+      box-shadow: 0 4px 20px rgba(77,200,49,0.3);
+      transition: all 0.2s;
+    }
+    .btn:hover { background: var(--green-dark); transform: translateY(-2px); }
+    .note { font-size: 0.78rem; color: var(--gray-400); margin-top: 1rem; margin-bottom: 0; }
+  </style>
+  <script>
+    setTimeout(function() {
+      window.location.href = "https://calendly.com/andreasnot-getaivy/30min";
+    }, 3000);
+  </script>
+</head>
+<body>
+  <div class="card">
+    <div class="check">✓</div>
+    <h1>Got It — We'll Be In Touch</h1>
+    <p>Your application is submitted. We review every one personally. In the meantime, go ahead and book your free call — we'll come prepared.</p>
+    <a class="btn" href="https://calendly.com/andreasnot-getaivy/30min">Book Your Call Now →</a>
+    <p class="note">Redirecting you automatically in a few seconds...</p>
+  </div>
+</body>
+</html>
