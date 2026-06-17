@@ -389,6 +389,84 @@
       .form-row { grid-template-columns: 1fr; }
     }
 
+    /* ─────────────────── CALCULATOR ─────────────────── */
+    #calculator { background: var(--gray-900); padding: 8rem 5rem; }
+    .calc-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center;
+    }
+    .calc-left .section-tag { color: rgba(255,255,255,0.55); }
+    .calc-left .section-tag::before { background: var(--green); }
+    .calc-left h2 { color: #fff; margin-bottom: 1rem; }
+    .calc-left > p { color: rgba(255,255,255,0.6); font-size: 1rem; font-weight: 300; line-height: 1.8; margin-bottom: 2.5rem; }
+
+    .calc-inputs { display: flex; flex-direction: column; gap: 1.4rem; }
+    .calc-field label {
+      display: block; font-size: 0.75rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: rgba(255,255,255,0.5); margin-bottom: 0.5rem;
+    }
+    .calc-field select {
+      width: 100%; background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12); border-radius: 2px;
+      padding: 0.85rem 2.5rem 0.85rem 1rem;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.95rem; color: #fff; outline: none; cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath fill='rgba(255,255,255,0.4)' d='M5 6L0 0h10z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 1rem center;
+      background-color: rgba(255,255,255,0.06);
+    }
+    .calc-field select option { background: #1a2e18; color: #fff; }
+    .calc-field select:focus { border-color: var(--green); background-color: rgba(77,200,49,0.08); }
+
+    .calc-right {
+      background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 4px; padding: 3rem;
+    }
+    .calc-result-label {
+      font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase;
+      color: rgba(255,255,255,0.45); margin-bottom: 0.6rem;
+    }
+    .calc-result-num {
+      font-family: 'Syne', sans-serif; font-size: clamp(2.8rem, 5vw, 4rem);
+      font-weight: 800; color: var(--green); line-height: 1;
+      margin-bottom: 0.4rem; transition: all 0.3s;
+    }
+    .calc-result-sub {
+      font-size: 0.85rem; color: rgba(255,255,255,0.45);
+      margin-bottom: 2.5rem;
+    }
+    .calc-breakdown { display: flex; flex-direction: column; gap: 0; margin-bottom: 2.5rem; }
+    .breakdown-row {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 0.9rem 0; border-bottom: 1px solid rgba(255,255,255,0.06);
+      font-size: 0.88rem;
+    }
+    .breakdown-row:last-child { border-bottom: none; }
+    .breakdown-label { color: rgba(255,255,255,0.5); }
+    .breakdown-val { font-family: 'Syne', sans-serif; font-weight: 700; color: var(--green-mid); }
+    .calc-cta {
+      display: block; text-align: center;
+      background: var(--green); color: #fff;
+      font-family: 'Syne', sans-serif; font-weight: 700;
+      font-size: 0.95rem; letter-spacing: 0.04em;
+      padding: 1rem 2rem; border-radius: 2px;
+      text-decoration: none; transition: all 0.2s;
+      box-shadow: 0 4px 20px rgba(77,200,49,0.3);
+    }
+    .calc-cta:hover { background: var(--green-dark); transform: translateY(-2px); }
+    .calc-default-msg {
+      color: rgba(255,255,255,0.3); font-size: 0.95rem;
+      font-style: italic; text-align: center; padding: 2rem 0;
+    }
+
+    @media (max-width: 960px) {
+      #calculator { padding-left: 1.5rem; padding-right: 1.5rem; }
+      .calc-inner { grid-template-columns: 1fr; gap: 3rem; }
+    }
+
     /* ─────────────────── CTA BANNER ─────────────────── */
     #cta-section {
       background: var(--green); padding: 7rem 5rem;
@@ -515,7 +593,7 @@
       <p>AIVY Solutions partners with established businesses to take full ownership of your backend — systems, operations, and infrastructure — so you scale without limits.</p>
       <div class="hero-actions">
         <a class="btn-green" href="apply.html">See If You're a Fit →</a>
-        <a class="btn-outline" href="index.html#vision-section">Learn More</a>
+        <a class="btn-outline" href="index.html#calculator">See Your Potential</a>
       </div>
     </div>
     <div class="hero-visual">
@@ -569,6 +647,64 @@
   <div class="stat-item"><div class="stat-num">60d</div><div class="stat-label">Time to Scale</div></div>
   <div class="stat-item"><div class="stat-num">100%</div><div class="stat-label">Partner Retention</div></div>
 </div>
+
+<!-- ═══ CALCULATOR ═══ -->
+<section id="calculator">
+  <div class="calc-inner">
+    <div class="calc-left">
+      <div class="section-tag">Revenue Calculator</div>
+      <h2>How Much More Could You Be Making?</h2>
+      <p>Answer 4 quick questions. We'll show you the upside you're leaving on the table right now.</p>
+      <div class="calc-inputs">
+        <div class="calc-field">
+          <label>Current Monthly Revenue</label>
+          <select id="calc-revenue" onchange="calcUpdate()">
+            <option value="">Select your range</option>
+            <option value="8000">Under $10k/mo</option>
+            <option value="20000">$10k – $30k/mo</option>
+            <option value="50000">$30k – $75k/mo</option>
+            <option value="130000">$75k – $200k/mo</option>
+            <option value="350000">$200k – $500k/mo</option>
+            <option value="750000">$500k+/mo</option>
+          </select>
+        </div>
+        <div class="calc-field">
+          <label>How are your operations run today?</label>
+          <select id="calc-ops" onchange="calcUpdate()">
+            <option value="">Select one</option>
+            <option value="0.32">Mostly manual — lots of spreadsheets &amp; email</option>
+            <option value="0.17">Mix of manual and some tools</option>
+            <option value="0.07">Pretty systemized already</option>
+          </select>
+        </div>
+        <div class="calc-field">
+          <label>How fast do you follow up on new leads?</label>
+          <select id="calc-leads" onchange="calcUpdate()">
+            <option value="">Select one</option>
+            <option value="0.00">Same day, always</option>
+            <option value="0.10">Within a couple days</option>
+            <option value="0.22">Whenever I get around to it</option>
+          </select>
+        </div>
+        <div class="calc-field">
+          <label>Team Size</label>
+          <select id="calc-team" onchange="calcUpdate()">
+            <option value="">Select one</option>
+            <option value="0.04">Solo / Just me</option>
+            <option value="0.08">2 – 10 people</option>
+            <option value="0.13">11 – 50 people</option>
+            <option value="0.18">50+ people</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="calc-right">
+      <div id="calc-output">
+        <p class="calc-default-msg">Fill in your details to see your potential.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ═══ VISION ═══ -->
 <section id="vision-section">
@@ -779,6 +915,66 @@
     el.style.transition = `opacity 0.5s ease ${i * 0.1}s, transform 0.5s ease ${i * 0.1}s`;
     io2.observe(el);
   });
+
+  function fmt(n) {
+    return '$' + Math.round(n).toLocaleString('en-US');
+  }
+
+  function animateNum(el, target) {
+    const start = parseInt(el.dataset.current || 0);
+    el.dataset.current = target;
+    const diff = target - start;
+    const duration = 600;
+    const startTime = performance.now();
+    function step(now) {
+      const p = Math.min((now - startTime) / duration, 1);
+      const ease = 1 - Math.pow(1 - p, 3);
+      el.textContent = fmt(start + diff * ease);
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  function calcUpdate() {
+    const revenue = parseFloat(document.getElementById('calc-revenue').value);
+    const ops     = parseFloat(document.getElementById('calc-ops').value);
+    const leads   = parseFloat(document.getElementById('calc-leads').value);
+    const team    = parseFloat(document.getElementById('calc-team').value);
+    const out     = document.getElementById('calc-output');
+
+    if (isNaN(revenue) || isNaN(ops) || isNaN(leads) || isNaN(team)) {
+      out.innerHTML = '<p class="calc-default-msg">Fill in all four fields to see your potential.</p>';
+      return;
+    }
+
+    const opsGain    = revenue * ops;
+    const leadsGain  = revenue * leads;
+    const teamGain   = revenue * team;
+    const total      = opsGain + leadsGain + teamGain;
+    const annualised = total * 12;
+
+    out.innerHTML = `
+      <div class="calc-result-label">Additional monthly revenue potential</div>
+      <div class="calc-result-num" id="calc-big-num" data-current="0">${fmt(0)}</div>
+      <div class="calc-result-sub">+${fmt(annualised)} per year</div>
+      <div class="calc-breakdown">
+        <div class="breakdown-row">
+          <span class="breakdown-label">From systemizing ops</span>
+          <span class="breakdown-val">${fmt(opsGain)}/mo</span>
+        </div>
+        <div class="breakdown-row">
+          <span class="breakdown-label">From faster lead follow-up</span>
+          <span class="breakdown-val">${fmt(leadsGain)}/mo</span>
+        </div>
+        <div class="breakdown-row">
+          <span class="breakdown-label">From team leverage</span>
+          <span class="breakdown-val">${fmt(teamGain)}/mo</span>
+        </div>
+      </div>
+      <a class="calc-cta" href="apply.html">Let's Go Get It →</a>
+    `;
+    animateNum(document.getElementById('calc-big-num'), total);
+  }
 </script>
 
 </body>
