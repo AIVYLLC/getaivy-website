@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AIVY Solutions | Growth & Backend Partner for Specialty Medical Clinics</title>
-  <meta name="description" content="AIVY is a growth, marketing, and backend operations partner for specialized medical and health clinics — from first patient contact to the ongoing relationship, so you can focus on treating patients." />
+  <title>AIVY | Growth & Backend Partner for Specialized Clinics</title>
+  <meta name="description" content="AIVY is a growth, marketing, and backend partner for specialized medical clinics — so you can focus on patients, not the business behind them." />
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png" />
@@ -203,8 +203,8 @@
       font-size: 1.2rem; transition: background 0.2s;
     }
     .feature-item:hover .feature-icon { background: var(--green-mid); }
-    .feature-body h3 {
-      font-family: 'Syne', sans-serif; font-size: 1rem;
+    .feature-title {
+      display: block; font-family: 'Syne', sans-serif; font-size: 1rem;
       font-weight: 700; color: var(--gray-900); margin-bottom: 0.3rem;
     }
     .feature-body p { font-size: 0.88rem; color: var(--gray-600); line-height: 1.65; }
@@ -230,8 +230,8 @@
       font-size: 1.6rem; position: relative; z-index: 1;
       box-shadow: 0 4px 16px rgba(58,171,32,0.08);
     }
-    .service-node h3 {
-      font-family: 'Syne', sans-serif; font-size: 1rem;
+    .service-title {
+      display: block; font-family: 'Syne', sans-serif; font-size: 1rem;
       font-weight: 700; color: var(--gray-900); margin-bottom: 0.5rem;
     }
     .service-node p { font-size: 0.85rem; color: var(--gray-600); line-height: 1.6; font-weight: 300; }
@@ -270,8 +270,8 @@
       font-family: 'Syne', sans-serif; font-size: 1.35rem;
       font-weight: 800; color: var(--gray-900); margin-bottom: 0.3rem;
     }
-    .pillar h4 {
-      font-size: 0.88rem; color: var(--green-deeper); font-weight: 600;
+    .pillar-tagline {
+      display: block; font-size: 0.88rem; color: var(--green-deeper); font-weight: 600;
       letter-spacing: 0.04em; margin-bottom: 1rem;
     }
     .pillar p { font-size: 0.92rem; color: var(--gray-600); line-height: 1.75; }
@@ -308,8 +308,8 @@
     .process-step:hover .step-num {
       background: var(--green); border-color: var(--green); color: #fff;
     }
-    .process-step h3 {
-      font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700;
+    .process-title {
+      display: block; font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700;
       color: var(--gray-900); margin-bottom: 0.5rem;
     }
     .process-step p { font-size: 0.875rem; color: var(--gray-600); line-height: 1.65; }
@@ -542,8 +542,8 @@
       color: var(--gray-400); font-size: 0.85rem; text-decoration: none; transition: color 0.2s;
     }
     .footer-contact a:hover { color: var(--green); }
-    footer h5 {
-      font-family: 'Syne', sans-serif; font-size: 0.75rem; font-weight: 700;
+    .footer-col-title {
+      display: block; font-family: 'Syne', sans-serif; font-size: 0.75rem; font-weight: 700;
       letter-spacing: 0.14em; text-transform: uppercase; color: #fff; margin-bottom: 1.4rem;
     }
     footer ul { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; }
@@ -794,28 +794,28 @@
       <div class="feature-item">
         <div class="feature-icon">🩺</div>
         <div class="feature-body">
-          <h3>You Treat Patients. We Handle Growth.</h3>
+          <div class="feature-title">You Treat Patients. We Handle Growth.</div>
           <p>You didn't get into your field to manage marketing, sales, and backend systems — that's exactly what we take off your plate.</p>
         </div>
       </div>
       <div class="feature-item">
         <div class="feature-icon">🎯</div>
         <div class="feature-body">
-          <h3>A Proven Framework, Customized to You</h3>
+          <div class="feature-title">A Proven Framework, Customized to You</div>
           <p>We use a tested growth framework and tailor it to your practice, your specialty, and your market — not a one-size-fits-all package.</p>
         </div>
       </div>
       <div class="feature-item">
         <div class="feature-icon">🔄</div>
         <div class="feature-body">
-          <h3>Full-Funnel, Start to Finish</h3>
+          <div class="feature-title">Full-Funnel, Start to Finish</div>
           <p>From first patient contact through the ongoing relationship, we run the marketing, intake, and systems in between — one partner, not a patchwork of vendors.</p>
         </div>
       </div>
       <div class="feature-item">
         <div class="feature-icon">⚙️</div>
         <div class="feature-body">
-          <h3>AI &amp; Automation, Built In</h3>
+          <div class="feature-title">AI &amp; Automation, Built In</div>
           <p>Patient intake, scheduling, follow-ups — we automate the repetitive parts of running a practice with the right AI tools.</p>
         </div>
       </div>
@@ -834,27 +834,27 @@
     <div class="services-chain">
       <div class="service-node">
         <div class="service-icon">🖥️</div>
-        <h3>Website Management</h3>
+        <div class="service-title">Website Management</div>
         <p>Kept current, fast, and built to convert — not a brochure that goes stale after launch.</p>
       </div>
       <div class="service-node">
         <div class="service-icon">🎯</div>
-        <h3>Funnel Strategy</h3>
+        <div class="service-title">Funnel Strategy</div>
         <p>The path from first contact to booked patient — ads, pages, and offers working as one path.</p>
       </div>
       <div class="service-node">
         <div class="service-icon">🩺</div>
-        <h3>Patient Onboarding</h3>
+        <div class="service-title">Patient Onboarding</div>
         <p>Intake, scheduling, and the first visit — systemized so new patients feel taken care of from day one.</p>
       </div>
       <div class="service-node">
         <div class="service-icon">💬</div>
-        <h3>Communication</h3>
+        <div class="service-title">Communication</div>
         <p>Calls, texts, emails, reminders, and follow-up — one consistent system, not a mess of tools.</p>
       </div>
       <div class="service-node">
         <div class="service-icon">📊</div>
-        <h3>Data-Driven Marketing</h3>
+        <div class="service-title">Data-Driven Marketing</div>
         <p>We track what's actually working and put the budget where it performs, not where it feels right.</p>
       </div>
     </div>
@@ -875,7 +875,7 @@
           <div class="pillar-num">01</div>
         </div>
         <h3>Audit</h3>
-        <h4>Where You Are, Where You're Going</h4>
+        <div class="pillar-tagline">Where You Are, Where You're Going</div>
         <p>We audit your operations, your marketing and patient-facing presence, and your numbers — then map exactly where your practice stands today and where you want it to go.</p>
         <div class="pillar-bar"><div class="pillar-bar-fill"></div></div>
       </div>
@@ -885,7 +885,7 @@
           <div class="pillar-num">02</div>
         </div>
         <h3>Systemize</h3>
-        <h4>Reduced to the Bone</h4>
+        <div class="pillar-tagline">Reduced to the Bone</div>
         <p>We strip out what isn't working, then rebuild what's left into a systematic, predictable flow — patient acquisition, intake, and backend, all running on rails.</p>
         <div class="pillar-bar"><div class="pillar-bar-fill" style="transition-delay:0.3s"></div></div>
       </div>
@@ -895,7 +895,7 @@
           <div class="pillar-num">03</div>
         </div>
         <h3>Scale</h3>
-        <h4>Narrow First, Then Flood It</h4>
+        <div class="pillar-tagline">Narrow First, Then Flood It</div>
         <p>We shrink the funnel down to its most precise version — the one that only lets in the highest-quality leads — then pour volume into exactly that funnel. More of the right patients, not just more traffic.</p>
         <div class="pillar-bar"><div class="pillar-bar-fill" style="transition-delay:0.45s"></div></div>
       </div>
@@ -913,22 +913,22 @@
     <div class="process-steps">
       <div class="process-step">
         <div class="step-num">01</div>
-        <h3>Discovery Call</h3>
+        <div class="process-title">Discovery Call</div>
         <p>We learn your practice, your specialty, and your patient journey — where you are today and where you want to be.</p>
       </div>
       <div class="process-step">
         <div class="step-num">02</div>
-        <h3>The Audit</h3>
+        <div class="process-title">The Audit</div>
         <p>We audit your operations, presence, and numbers in full, and scope a framework customized to your practice — clear deliverables, no vague consulting.</p>
       </div>
       <div class="process-step">
         <div class="step-num">03</div>
-        <h3>Systemize &amp; Build</h3>
+        <div class="process-title">Systemize &amp; Build</div>
         <p>We reduce what isn't working and build the systematic, predictable flow — marketing, intake, and backend — set up and run by AIVY.</p>
       </div>
       <div class="process-step">
         <div class="step-num">04</div>
-        <h3>Scale Together</h3>
+        <div class="process-title">Scale Together</div>
         <p>We narrow the funnel to your highest-quality leads, then flood it with volume — staying on as your growth partner as results compound.</p>
       </div>
     </div>
@@ -944,7 +944,7 @@
       <p>We work with a limited number of specialized clinics at a time. Book a free call and let's talk about what your growth and backend could look like — no commitment, just a straight conversation.</p>
     </div>
     <div class="cta-action">
-      <a class="btn-white" href="apply.html">Get Your Free Audit →</a>
+      <a class="btn-white" href="apply.html">Book Your Free Audit →</a>
       <span class="cta-note">Takes 2 minutes — we'll reach out within 1 business day</span>
     </div>
   </div>
@@ -959,21 +959,22 @@
       <div class="footer-contact">
         <a href="tel:+12676321250">(+1) 267-632-1250</a>
         <a href="mailto:admin@getaivy.info">admin@getaivy.info</a>
+        <a href="https://calendly.com/andreasnot-getaivy/30min" target="_blank" rel="noopener">Book a call directly →</a>
         <span>39 Fourth Ave, Ste 1401 #7263<br>Pittsburgh, PA 15222 USA</span>
       </div>
     </div>
     <div>
-      <h5>Navigation</h5>
+      <div class="footer-col-title">Navigation</div>
       <ul>
         <li><a href="index.html#">Home</a></li>
         <li><a href="index.html#vision-section">Our Vision</a></li>
         <li><a href="index.html#services">What We Do</a></li>
         <li><a href="index.html#process">Process</a></li>
-        <li><a href="apply.html">Free Audit</a></li>
+        <li><a href="apply.html">Get Your Free Audit</a></li>
       </ul>
     </div>
     <div>
-      <h5>Company</h5>
+      <div class="footer-col-title">Company</div>
       <ul>
         <li><a href="index.html#">AIVY LLC</a></li>
         <li><a href="index.html#">NAICS: 518210</a></li>
