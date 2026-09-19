@@ -1,0 +1,9 @@
+{
+  "name": "getaivy-website",
+  "private": true,
+  "version": "1.0.0",
+  "description": "AIVY marketing site — static HTML plus a Netlify Function for form-triggered emails.",
+  "dependencies": {
+    "nodemailer": "^6.9.14"
+  }
+}
