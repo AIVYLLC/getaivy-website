@@ -3,8 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AIVY Solutions | AI Automation & Backend Operations for Small Businesses</title>
-  <meta name="description" content="AIVY is a remote AI automation and backend operations partner helping small businesses save time by automating repetitive tasks and managing backend systems — wherever you are." />
+  <title>AIVY Solutions | Growth & Backend Partner for Specialty Medical Clinics</title>
+  <meta name="description" content="AIVY is a growth, marketing, and backend operations partner for specialized medical and health clinics — from first patient contact to the ongoing relationship, so you can focus on treating patients." />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet" />
@@ -73,40 +77,18 @@
 
     /* ─────────────────── HERO ─────────────────── */
     #hero {
-      min-height: 100vh;
+      min-height: 90vh;
       background: var(--green-light);
       display: flex; align-items: center;
       padding: 10rem 5rem 7rem;
       position: relative; overflow: hidden;
     }
 
-    #hero::before {
-      content: '';
-      position: absolute; top: 0; right: 0;
-      width: 55%; height: 100%;
-      background: var(--green);
-      clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%);
-      z-index: 0;
-    }
-    #hero::after {
-      content: '';
-      position: absolute; top: 0; right: 0;
-      width: 55%; height: 100%;
-      background-image: repeating-linear-gradient(
-        135deg,
-        rgba(255,255,255,0.04) 0px,
-        rgba(255,255,255,0.04) 1px,
-        transparent 1px,
-        transparent 40px
-      );
-      clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%);
-      z-index: 1;
-    }
-
     .hero-inner {
       position: relative; z-index: 2;
-      display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
-      align-items: center; max-width: 1200px; margin: 0 auto; width: 100%;
+      max-width: 760px; margin: 0 auto; width: 100%;
+      text-align: center;
+      display: flex; flex-direction: column; align-items: center;
     }
 
     .hero-text { animation: fadeUp 0.9s 0.2s ease both; }
@@ -126,7 +108,7 @@
 
     .hero-text h1 {
       font-family: 'Syne', sans-serif;
-      font-size: clamp(2rem, 3.2vw, 3.2rem);
+      font-size: clamp(2.2rem, 4.2vw, 3.4rem);
       font-weight: 800; line-height: 1.1;
       letter-spacing: -0.03em;
       color: var(--gray-900); margin-bottom: 1.5rem;
@@ -134,11 +116,11 @@
     .hero-text h1 em { font-style: normal; color: var(--green-dark); }
     .hero-text p {
       font-size: 1.1rem; color: var(--gray-600);
-      max-width: 440px; line-height: 1.8;
-      font-weight: 300; margin-bottom: 2.5rem;
+      max-width: 580px; line-height: 1.8;
+      font-weight: 300; margin: 0 auto 2.5rem;
     }
 
-    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; justify-content: center; }
     .btn-green {
       background: var(--green); color: #fff;
       font-family: 'Syne', sans-serif; font-weight: 700;
@@ -159,35 +141,6 @@
     .btn-outline:hover { color: var(--green-dark); }
     .btn-outline::after { content: '→'; transition: transform 0.2s; }
     .btn-outline:hover::after { transform: translateX(4px); }
-
-    .hero-visual {
-      display: flex; align-items: center; justify-content: center;
-      animation: fadeUp 0.9s 0.4s ease both;
-    }
-    .hero-card {
-      background: rgba(255,255,255,0.92); border-radius: 4px;
-      padding: 2.5rem; max-width: 340px; width: 100%;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.12), 0 4px 16px rgba(0,0,0,0.06);
-    }
-    .hero-card-label {
-      font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase;
-      color: var(--green-deeper); font-weight: 600; margin-bottom: 1.5rem;
-    }
-    .metric-row {
-      display: flex; justify-content: space-between; align-items: flex-end;
-      border-bottom: 1px solid var(--border); padding-bottom: 1rem; margin-bottom: 1rem;
-    }
-    .metric-row:last-child { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
-    .metric-label { font-size: 0.8rem; color: var(--gray-600); font-weight: 400; white-space: nowrap; }
-    .metric-val {
-      font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 800;
-      color: var(--green-dark); white-space: nowrap;
-    }
-    .metric-change {
-      font-size: 0.75rem; font-weight: 600;
-      background: var(--green-pale); color: var(--green-deeper);
-      padding: 0.2rem 0.5rem; border-radius: 100px;
-    }
 
     /* ─────────────────── STATS BAR ─────────────────── */
     .stats-bar {
@@ -255,6 +208,33 @@
       font-weight: 700; color: var(--gray-900); margin-bottom: 0.3rem;
     }
     .feature-body p { font-size: 0.88rem; color: var(--gray-600); line-height: 1.65; }
+
+    /* ─────────────────── SERVICES ─────────────────── */
+    #services { background: var(--green-light); padding: 8rem 5rem; }
+    .services-inner { max-width: 1200px; margin: 0 auto; }
+    .services-header { max-width: 720px; margin-bottom: 4.5rem; }
+    .services-header p { color: var(--gray-600); font-size: 1.02rem; line-height: 1.85; font-weight: 300; margin-top: 1rem; }
+
+    .services-chain { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.5rem; position: relative; }
+    .services-chain::before {
+      content: ''; position: absolute;
+      top: 34px; left: calc(10% + 17px); right: calc(10% + 17px);
+      height: 1px; background: var(--green-mid);
+    }
+    .service-node { text-align: center; position: relative; }
+    .service-icon {
+      width: 68px; height: 68px; margin: 0 auto 1.2rem;
+      border-radius: 50%; background: var(--white);
+      border: 2px solid var(--green-mid);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.6rem; position: relative; z-index: 1;
+      box-shadow: 0 4px 16px rgba(58,171,32,0.08);
+    }
+    .service-node h3 {
+      font-family: 'Syne', sans-serif; font-size: 1rem;
+      font-weight: 700; color: var(--gray-900); margin-bottom: 0.5rem;
+    }
+    .service-node p { font-size: 0.85rem; color: var(--gray-600); line-height: 1.6; font-weight: 300; }
 
     /* ─────────────────── PILLARS ─────────────────── */
     #pillars { background: var(--gray-100); padding: 8rem 5rem; }
@@ -463,9 +443,53 @@
       font-style: italic; text-align: center; padding: 2rem 0;
     }
 
+    .calc-results-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
+      margin-bottom: 2rem; padding-bottom: 2rem;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .calc-hours-num {
+      font-family: 'Syne', sans-serif; font-size: clamp(2.8rem, 5vw, 4rem);
+      font-weight: 800; color: var(--green-mid); line-height: 1;
+      margin-bottom: 0.4rem; transition: all 0.3s;
+    }
+
+    .gate-intro { font-size: 0.92rem; color: rgba(255,255,255,0.6); line-height: 1.7; margin-bottom: 1.6rem; }
+    .gate-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .gate-row + .gate-row { margin-top: 1rem; }
+    .gate-field label {
+      display: block; font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: rgba(255,255,255,0.5); margin-bottom: 0.4rem;
+    }
+    .gate-field input {
+      width: 100%; background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12); border-radius: 2px;
+      padding: 0.8rem 1rem; font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.92rem; color: #fff; outline: none;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .gate-field input::placeholder { color: rgba(255,255,255,0.3); }
+    .gate-field input:focus { border-color: var(--green); background: rgba(77,200,49,0.08); }
+    .gate-submit {
+      display: block; width: 100%; margin-top: 1.4rem;
+      background: var(--green); color: #fff;
+      font-family: 'Syne', sans-serif; font-weight: 700;
+      font-size: 0.95rem; letter-spacing: 0.04em;
+      padding: 1rem 1.5rem; border-radius: 2px; border: none;
+      cursor: pointer; transition: all 0.2s;
+      box-shadow: 0 4px 20px rgba(77,200,49,0.3);
+    }
+    .gate-submit:hover { background: var(--green-dark); transform: translateY(-2px); }
+    .gate-submit:disabled { opacity: 0.6; cursor: default; transform: none; }
+    .gate-note { font-size: 0.75rem; color: rgba(255,255,255,0.35); text-align: center; margin-top: 0.9rem; }
+    .gate-error { font-size: 0.8rem; color: #ff9a9a; text-align: center; margin-top: 0.9rem; }
+
     @media (max-width: 960px) {
       #calculator { padding-left: 1.5rem; padding-right: 1.5rem; }
       .calc-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .calc-results-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .gate-row { grid-template-columns: 1fr; }
     }
 
     /* ─────────────────── CTA BANNER ─────────────────── */
@@ -559,15 +583,15 @@
       nav { padding: 1rem 1.5rem; }
       .nav-links { display: none; }
       #hero { padding: 8rem 1.5rem 5rem; }
-      #hero::before, #hero::after { width: 100%; clip-path: polygon(0 60%, 100% 40%, 100% 100%, 0 100%); top: auto; bottom: 0; height: 50%; }
-      .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
       .vision-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .services-chain { grid-template-columns: 1fr 1fr; }
+      .services-chain::before { display: none; }
       .pillars-grid { grid-template-columns: 1fr; }
       .process-steps { grid-template-columns: 1fr 1fr; }
       .process-steps::before { display: none; }
       .cta-inner { grid-template-columns: 1fr; gap: 2rem; }
       .footer-inner { grid-template-columns: 1fr; gap: 2.5rem; }
-      #vision-section, #pillars, #process, #cta-section, footer { padding-left: 1.5rem; padding-right: 1.5rem; }
+      #vision-section, #services, #pillars, #process, #cta-section, footer { padding-left: 1.5rem; padding-right: 1.5rem; }
     }
   </style>
 </head>
@@ -575,67 +599,26 @@
 
 <!-- ═══ NAV ═══ -->
 <nav>
-  <a class="nav-logo" href="index.html#"><img src="logo.jpg" alt="AIVY Solutions" /></a>
+  <a class="nav-logo" href="index.html#"><img src="aivy-logo.png" alt="AIVY Solutions" /></a>
   <ul class="nav-links">
     <li><a href="index.html#vision-section">Vision</a></li>
-    <li><a href="index.html#pillars">Services</a></li>
+    <li><a href="index.html#services">Services</a></li>
     <li><a href="index.html#process">Process</a></li>
     <li><a href="apply.html">Apply</a></li>
   </ul>
-  <a class="nav-cta" href="apply.html">See If You're a Fit</a>
+  <a class="nav-cta" href="apply.html">Free Audit</a>
 </nav>
 
 <!-- ═══ HERO ═══ -->
 <section id="hero">
   <div class="hero-inner">
     <div class="hero-text">
-      <div class="hero-badge">AI Automation &amp; Backend Operations</div>
-      <h1>We Automate the Backend So You Can Run the <em>Business</em></h1>
-      <p>AIVY is a remote AI automation and backend operations partner. We automate repetitive tasks, integrate the right AI tools, and run the systems behind your business — for clients across countries and time zones.</p>
+      <div class="hero-badge">Growth Partner for Specialty Clinics</div>
+      <h1>We Run Your Growth So You Can Focus on <em>Patients</em></h1>
+      <p>AIVY is a growth, marketing, and backend partner for specialized medical and health clinics. From first patient contact to the ongoing relationship, we run a proven framework — audit, systemize, scale — customized to your practice.</p>
       <div class="hero-actions">
-        <a class="btn-green" href="apply.html">See If You're a Fit →</a>
-        <a class="btn-outline" href="index.html#calculator">See Your Potential</a>
-      </div>
-    </div>
-    <div class="hero-visual">
-      <div class="hero-card">
-        <div class="hero-card-label">Partner Growth Metrics</div>
-        <div class="metric-row">
-          <div>
-            <div class="metric-label">Avg. Revenue Growth</div>
-          </div>
-          <div style="display:flex;align-items:center;gap:0.6rem;">
-            <div class="metric-val">2.4×</div>
-            <span class="metric-change">↑ YoY</span>
-          </div>
-        </div>
-        <div class="metric-row">
-          <div>
-            <div class="metric-label">Ops Efficiency Gain</div>
-          </div>
-          <div style="display:flex;align-items:center;gap:0.6rem;">
-            <div class="metric-val">87%</div>
-            <span class="metric-change">↑ Avg</span>
-          </div>
-        </div>
-        <div class="metric-row">
-          <div>
-            <div class="metric-label">Time to Scale</div>
-          </div>
-          <div style="display:flex;align-items:center;gap:0.6rem;">
-            <div class="metric-val">60 days</div>
-            <span class="metric-change">Fast</span>
-          </div>
-        </div>
-        <div class="metric-row">
-          <div>
-            <div class="metric-label">Partner Retention</div>
-          </div>
-          <div style="display:flex;align-items:center;gap:0.6rem;">
-            <div class="metric-val">100%</div>
-            <span class="metric-change">All-time</span>
-          </div>
-        </div>
+        <a class="btn-green" href="apply.html">Get Your Free Audit →</a>
+        <a class="btn-outline" href="index.html#calculator">What Am I Leaving on the Table?</a>
       </div>
     </div>
   </div>
@@ -643,19 +626,19 @@
 
 <!-- ═══ STATS ═══ -->
 <div class="stats-bar">
-  <div class="stat-item"><div class="stat-num">2.4×</div><div class="stat-label">Revenue Growth</div></div>
+  <div class="stat-item"><div class="stat-num">2.4×</div><div class="stat-label">Patient Growth</div></div>
   <div class="stat-item"><div class="stat-num">87%</div><div class="stat-label">Ops Efficiency</div></div>
-  <div class="stat-item"><div class="stat-num">60d</div><div class="stat-label">Time to Scale</div></div>
-  <div class="stat-item"><div class="stat-num">100%</div><div class="stat-label">Partner Retention</div></div>
+  <div class="stat-item"><div class="stat-num">60d</div><div class="stat-label">Time to Launch</div></div>
+  <div class="stat-item"><div class="stat-num">100%</div><div class="stat-label">Client Retention</div></div>
 </div>
 
 <!-- ═══ CALCULATOR ═══ -->
 <section id="calculator">
   <div class="calc-inner">
     <div class="calc-left">
-      <div class="section-tag">Revenue Calculator</div>
-      <h2>How Much More Could You Be Making?</h2>
-      <p>Answer 4 quick questions. We'll show you the upside you're leaving on the table right now.</p>
+      <div class="section-tag">Free Diagnostic</div>
+      <h2>What Am I Leaving on the Table?</h2>
+      <p>Answer a few quick questions about your practice. We'll show you the monthly revenue — and the hours — you could be getting back.</p>
       <div class="calc-inputs">
         <div class="calc-field">
           <label>Current Monthly Revenue</label>
@@ -670,38 +653,128 @@
           </select>
         </div>
         <div class="calc-field">
-          <label>How are your operations run today?</label>
+          <label>Are you currently running paid advertising?</label>
+          <select id="calc-ads" onchange="calcUpdate()">
+            <option value="">Select one</option>
+            <option value="0.16" data-hours="3">No paid ads at all</option>
+            <option value="0.09" data-hours="1.5">Some, but inconsistent</option>
+            <option value="0.03" data-hours="0.5">Yes, consistently</option>
+          </select>
+        </div>
+        <div class="calc-field">
+          <label>What % of your schedule/capacity are you running at?</label>
+          <select id="calc-capacity" onchange="calcUpdate()">
+            <option value="">Select one</option>
+            <option value="0.22">Under 50%</option>
+            <option value="0.13">50 – 70%</option>
+            <option value="0.06">70 – 85%</option>
+            <option value="0.01">85 – 100% (or waitlisted)</option>
+          </select>
+        </div>
+        <div class="calc-field">
+          <label>How is your practice run today?</label>
           <select id="calc-ops" onchange="calcUpdate()">
             <option value="">Select one</option>
-            <option value="0.32">Mostly manual — lots of spreadsheets &amp; email</option>
-            <option value="0.17">Mix of manual and some tools</option>
-            <option value="0.07">Pretty systemized already</option>
+            <option value="0.16" data-hours="9">Mostly manual — lots of spreadsheets &amp; email</option>
+            <option value="0.08" data-hours="5">Mix of manual and some tools</option>
+            <option value="0.03" data-hours="1.5">Pretty systemized already</option>
           </select>
         </div>
         <div class="calc-field">
-          <label>How fast do you follow up on new leads?</label>
+          <label>How fast do you follow up on new patient inquiries?</label>
           <select id="calc-leads" onchange="calcUpdate()">
             <option value="">Select one</option>
-            <option value="0.00">Same day, always</option>
-            <option value="0.10">Within a couple days</option>
-            <option value="0.22">Whenever I get around to it</option>
+            <option value="0.00" data-hours="0.5">Same day, always</option>
+            <option value="0.06" data-hours="3">Within a couple days</option>
+            <option value="0.13" data-hours="6">Whenever I get around to it</option>
           </select>
         </div>
         <div class="calc-field">
-          <label>Team Size</label>
+          <label>Staff Size</label>
           <select id="calc-team" onchange="calcUpdate()">
             <option value="">Select one</option>
-            <option value="0.04">Solo / Just me</option>
-            <option value="0.08">2 – 10 people</option>
-            <option value="0.13">11 – 50 people</option>
-            <option value="0.18">50+ people</option>
+            <option value="0.04" data-hours="8">Solo / Just me</option>
+            <option value="0.025" data-hours="5">2 – 10 people</option>
+            <option value="0.012" data-hours="2.5">11 – 50 people</option>
+            <option value="0.008" data-hours="1">50+ people</option>
           </select>
         </div>
       </div>
     </div>
     <div class="calc-right">
       <div id="calc-output">
-        <p class="calc-default-msg">Fill in your details to see your potential.</p>
+
+        <div id="calc-default">
+          <p class="calc-default-msg">Fill in your details to see your potential.</p>
+        </div>
+
+        <form id="calc-gate-form" name="revenue-calculator-leads" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden>
+          <input type="hidden" name="form-name" value="revenue-calculator-leads" />
+          <p style="display:none"><input name="bot-field" /></p>
+          <p class="gate-intro">You're about to see exactly what it's costing you every month — and every week. Where should we send it?</p>
+          <div class="gate-row">
+            <div class="gate-field">
+              <label for="calc-first-name">First Name</label>
+              <input type="text" id="calc-first-name" name="first_name" placeholder="Jane" required />
+            </div>
+            <div class="gate-field">
+              <label for="calc-last-name">Last Name</label>
+              <input type="text" id="calc-last-name" name="last_name" placeholder="Smith" required />
+            </div>
+          </div>
+          <div class="gate-row">
+            <div class="gate-field">
+              <label for="calc-email">Email</label>
+              <input type="email" id="calc-email" name="email" placeholder="jane@yourpractice.com" required />
+            </div>
+            <div class="gate-field">
+              <label for="calc-phone">Phone</label>
+              <input type="tel" id="calc-phone" name="phone" placeholder="(555) 555-5555" required />
+            </div>
+          </div>
+          <button type="submit" class="gate-submit">Show Me My Results →</button>
+          <p class="gate-note">We'll only use this to send your personalized breakdown.</p>
+          <p class="gate-error" id="calc-gate-error" hidden>Something went wrong — please try again, or email us directly at admin@getaivy.info.</p>
+        </form>
+
+        <div id="calc-results" hidden>
+          <div class="calc-results-grid">
+            <div>
+              <div class="calc-result-label">Money left on the table</div>
+              <div class="calc-result-num" id="calc-money-num" data-current="0">$0</div>
+              <div class="calc-result-sub" id="calc-money-sub">+$0/year</div>
+            </div>
+            <div>
+              <div class="calc-result-label">Hours you could get back</div>
+              <div class="calc-hours-num" id="calc-hours-num" data-current="0">0 hrs</div>
+              <div class="calc-result-sub">per week, back in your day</div>
+            </div>
+          </div>
+          <div class="calc-breakdown">
+            <div class="breakdown-row">
+              <span class="breakdown-label">From filling more capacity</span>
+              <span class="breakdown-val" id="bd-capacity">$0/mo</span>
+            </div>
+            <div class="breakdown-row">
+              <span class="breakdown-label">From paid growth &amp; advertising</span>
+              <span class="breakdown-val" id="bd-ads">$0/mo</span>
+            </div>
+            <div class="breakdown-row">
+              <span class="breakdown-label">From faster patient follow-up</span>
+              <span class="breakdown-val" id="bd-leads">$0/mo</span>
+            </div>
+            <div class="breakdown-row">
+              <span class="breakdown-label">From systemizing operations</span>
+              <span class="breakdown-val" id="bd-ops">$0/mo</span>
+            </div>
+            <div class="breakdown-row">
+              <span class="breakdown-label">From reducing owner dependency</span>
+              <span class="breakdown-val" id="bd-team">$0/mo</span>
+            </div>
+          </div>
+          <a class="calc-cta" href="apply.html">Let's Go Get It →</a>
+        </div>
+
       </div>
     </div>
   </div>
@@ -712,39 +785,77 @@
   <div class="vision-inner">
     <div class="vision-text">
       <div class="section-tag">Our Vision</div>
-      <h2>We Handle the Automation. You Focus on Growth.</h2>
-      <p>Most small businesses lose hours every week to repetitive, manual work — chasing leads, updating spreadsheets, juggling disconnected tools. That time adds up, and it quietly caps how much you can grow.</p>
-      <p>AIVY steps in as your remote automation and backend team. We integrate AI tools, automate the repetitive parts of your operations, and manage the systems running behind the scenes — so your time goes toward the business, not the busywork. We work with clients in different countries, fully remote, and stay embedded for the long run.</p>
+      <h2>We Handle Growth. You Focus on Patients.</h2>
+      <p>Specialists don't build a practice to spend their time on marketing, scheduling, and backend admin — but that's where most of the week disappears. Every hour spent chasing referrals or untangling systems is an hour not spent with patients.</p>
+      <p>AIVY steps in as your growth and backend partner — covering everything from first patient contact to the ongoing relationship. We run a proven framework, customized to your practice: audit where you stand, systemize what's working, and scale what's left. You treat patients. We handle the rest, embedded for the long run.</p>
       <a class="btn-green" href="index.html#pillars">How We Do It →</a>
     </div>
     <div class="feature-stack">
       <div class="feature-item">
-        <div class="feature-icon">🤝</div>
+        <div class="feature-icon">🩺</div>
         <div class="feature-body">
-          <h3>Hands-On, Not Hands-Off</h3>
-          <p>We don't just recommend automations — we build, run, and maintain them, staying accountable for the results.</p>
+          <h3>You Treat Patients. We Handle Growth.</h3>
+          <p>You didn't get into your field to manage marketing, sales, and backend systems — that's exactly what we take off your plate.</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">🎯</div>
+        <div class="feature-body">
+          <h3>A Proven Framework, Customized to You</h3>
+          <p>We use a tested growth framework and tailor it to your practice, your specialty, and your market — not a one-size-fits-all package.</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">🔄</div>
+        <div class="feature-body">
+          <h3>Full-Funnel, Start to Finish</h3>
+          <p>From first patient contact through the ongoing relationship, we run the marketing, intake, and systems in between — one partner, not a patchwork of vendors.</p>
         </div>
       </div>
       <div class="feature-item">
         <div class="feature-icon">⚙️</div>
         <div class="feature-body">
           <h3>AI &amp; Automation, Built In</h3>
-          <p>From workflow automation to AI tool integrations, we handle the backend systems so your team can focus on customers and growth.</p>
+          <p>Patient intake, scheduling, follow-ups — we automate the repetitive parts of running a practice with the right AI tools.</p>
         </div>
       </div>
-      <div class="feature-item">
-        <div class="feature-icon">🌍</div>
-        <div class="feature-body">
-          <h3>Remote &amp; International</h3>
-          <p>Fully remote and working across time zones, we support clients in different countries as a true extension of their team.</p>
-        </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SERVICES ═══ -->
+<section id="services">
+  <div class="services-inner">
+    <div class="services-header">
+      <div class="section-tag">What's Included</div>
+      <h2>One System, Five Interlinked Services</h2>
+      <p>We don't sell these as separate line items. Your website feeds your funnel, your funnel feeds patient onboarding, onboarding shapes your communication, and every touchpoint feeds the data behind your marketing. Change one, and it changes the rest — so we run all of it together, not in pieces.</p>
+    </div>
+    <div class="services-chain">
+      <div class="service-node">
+        <div class="service-icon">🖥️</div>
+        <h3>Website Management</h3>
+        <p>Kept current, fast, and built to convert — not a brochure that goes stale after launch.</p>
       </div>
-      <div class="feature-item">
-        <div class="feature-icon">🎯</div>
-        <div class="feature-body">
-          <h3>Aligned Incentives</h3>
-          <p>We win when you grow. Our partnership model means we're always optimizing for your long-term success, not billable hours.</p>
-        </div>
+      <div class="service-node">
+        <div class="service-icon">🎯</div>
+        <h3>Funnel Strategy</h3>
+        <p>The path from first contact to booked patient — ads, pages, and offers working as one path.</p>
+      </div>
+      <div class="service-node">
+        <div class="service-icon">🩺</div>
+        <h3>Patient Onboarding</h3>
+        <p>Intake, scheduling, and the first visit — systemized so new patients feel taken care of from day one.</p>
+      </div>
+      <div class="service-node">
+        <div class="service-icon">💬</div>
+        <h3>Communication</h3>
+        <p>Calls, texts, emails, reminders, and follow-up — one consistent system, not a mess of tools.</p>
+      </div>
+      <div class="service-node">
+        <div class="service-icon">📊</div>
+        <h3>Data-Driven Marketing</h3>
+        <p>We track what's actually working and put the budget where it performs, not where it feels right.</p>
       </div>
     </div>
   </div>
@@ -754,8 +865,8 @@
 <section id="pillars">
   <div class="pillars-inner">
     <div class="pillars-header">
-      <div class="section-tag">What We Do</div>
-      <h2>Three Ways We Take Automation and Backend Ops Off Your Plate</h2>
+      <div class="section-tag">Our Framework</div>
+      <h2>One System: Audit, Systemize, Scale</h2>
     </div>
     <div class="pillars-grid">
       <div class="pillar">
@@ -763,19 +874,19 @@
           <div class="pillar-icon">🔍</div>
           <div class="pillar-num">01</div>
         </div>
-        <h3>Identify</h3>
-        <h4>Map the Opportunities</h4>
-        <p>We look at how your business runs day to day — the repetitive tasks, the manual processes, the tools that don't talk to each other — and map out exactly what should be automated first.</p>
+        <h3>Audit</h3>
+        <h4>Where You Are, Where You're Going</h4>
+        <p>We audit your operations, your marketing and patient-facing presence, and your numbers — then map exactly where your practice stands today and where you want it to go.</p>
         <div class="pillar-bar"><div class="pillar-bar-fill"></div></div>
       </div>
       <div class="pillar">
         <div class="pillar-top">
-          <div class="pillar-icon">🤝</div>
+          <div class="pillar-icon">⚙️</div>
           <div class="pillar-num">02</div>
         </div>
-        <h3>Automate</h3>
-        <h4>Build &amp; Integrate</h4>
-        <p>We build the automations and integrate the AI tools that fit your workflow, then take ownership of the systems running behind your business — so things just work.</p>
+        <h3>Systemize</h3>
+        <h4>Reduced to the Bone</h4>
+        <p>We strip out what isn't working, then rebuild what's left into a systematic, predictable flow — patient acquisition, intake, and backend, all running on rails.</p>
         <div class="pillar-bar"><div class="pillar-bar-fill" style="transition-delay:0.3s"></div></div>
       </div>
       <div class="pillar">
@@ -783,9 +894,9 @@
           <div class="pillar-icon">🚀</div>
           <div class="pillar-num">03</div>
         </div>
-        <h3>Manage</h3>
-        <h4>Run It Remotely</h4>
-        <p>We stay on as your remote backend team — monitoring, maintaining, and improving your systems and automations as your business grows, no matter where in the world you're based.</p>
+        <h3>Scale</h3>
+        <h4>Narrow First, Then Flood It</h4>
+        <p>We shrink the funnel down to its most precise version — the one that only lets in the highest-quality leads — then pour volume into exactly that funnel. More of the right patients, not just more traffic.</p>
         <div class="pillar-bar"><div class="pillar-bar-fill" style="transition-delay:0.45s"></div></div>
       </div>
     </div>
@@ -797,28 +908,28 @@
   <div class="process-inner">
     <div class="process-header">
       <div class="section-tag">How It Works</div>
-      <h2>From First Call to Automated Backend in 4 Steps</h2>
+      <h2>From First Call to a Full Growth System in 4 Steps</h2>
     </div>
     <div class="process-steps">
       <div class="process-step">
         <div class="step-num">01</div>
         <h3>Discovery Call</h3>
-        <p>We learn how your business runs today and identify which tasks and systems are the best candidates for automation.</p>
+        <p>We learn your practice, your specialty, and your patient journey — where you are today and where you want to be.</p>
       </div>
       <div class="process-step">
         <div class="step-num">02</div>
-        <h3>Partnership Scope</h3>
-        <p>We scope exactly what we'll automate and manage, with clear deliverables and success metrics — no vague consulting.</p>
+        <h3>The Audit</h3>
+        <p>We audit your operations, presence, and numbers in full, and scope a framework customized to your practice — clear deliverables, no vague consulting.</p>
       </div>
       <div class="process-step">
         <div class="step-num">03</div>
-        <h3>Build &amp; Own</h3>
-        <p>We build the automations, integrate the right AI tools, and take ownership of the systems — set up, deployed, and managed by AIVY.</p>
+        <h3>Systemize &amp; Build</h3>
+        <p>We reduce what isn't working and build the systematic, predictable flow — marketing, intake, and backend — set up and run by AIVY.</p>
       </div>
       <div class="process-step">
         <div class="step-num">04</div>
         <h3>Scale Together</h3>
-        <p>We stay on remotely, continuously improving your automations and backend systems as your business grows.</p>
+        <p>We narrow the funnel to your highest-quality leads, then flood it with volume — staying on as your growth partner as results compound.</p>
       </div>
     </div>
   </div>
@@ -829,11 +940,11 @@
   <div class="cta-inner">
     <div class="cta-text">
       <div class="section-tag">Let's Talk</div>
-      <h2>Ready to Automate the Busywork?</h2>
-      <p>We work with a limited number of clients at a time, remotely and across borders. Book a free call and let's talk about what could be automated in your business — no commitment, just a straight conversation.</p>
+      <h2>Ready to Focus on Patients Again?</h2>
+      <p>We work with a limited number of specialized clinics at a time. Book a free call and let's talk about what your growth and backend could look like — no commitment, just a straight conversation.</p>
     </div>
     <div class="cta-action">
-      <a class="btn-white" href="apply.html">See If You're a Fit →</a>
+      <a class="btn-white" href="apply.html">Get Your Free Audit →</a>
       <span class="cta-note">Takes 2 minutes — we'll reach out within 1 business day</span>
     </div>
   </div>
@@ -843,8 +954,8 @@
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
-      <img src="logo.jpg" alt="AIVY Solutions" />
-      <p>AI automation and backend operations for small businesses — fully remote, working with clients across countries.</p>
+      <img src="aivy-logo.png" alt="AIVY Solutions" />
+      <p>Growth, marketing, and backend operations for specialized medical and health clinics — so you can focus on patients.</p>
       <div class="footer-contact">
         <a href="tel:+12676321250">(+1) 267-632-1250</a>
         <a href="mailto:admin@getaivy.info">admin@getaivy.info</a>
@@ -856,9 +967,9 @@
       <ul>
         <li><a href="index.html#">Home</a></li>
         <li><a href="index.html#vision-section">Our Vision</a></li>
-        <li><a href="index.html#pillars">What We Do</a></li>
+        <li><a href="index.html#services">What We Do</a></li>
         <li><a href="index.html#process">Process</a></li>
-        <li><a href="apply.html">See If You're a Fit</a></li>
+        <li><a href="apply.html">Free Audit</a></li>
       </ul>
     </div>
     <div>
@@ -872,7 +983,7 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© 2026 AIVY LLC. All rights reserved. AI automation and backend operations, fully remote.</p>
+    <p>© 2026 AIVY LLC. All rights reserved. Growth and backend partner for specialty clinics.</p>
     <div class="footer-socials">
       <a class="social-link" href="index.html#" aria-label="Facebook">f</a>
       <a class="social-link" href="index.html#" aria-label="Instagram">ig</a>
@@ -917,12 +1028,24 @@
     io2.observe(el);
   });
 
-  function fmt(n) {
+  document.querySelectorAll('.service-node').forEach((el, i) => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = `opacity 0.5s ease ${i * 0.1}s, transform 0.5s ease ${i * 0.1}s`;
+    io2.observe(el);
+  });
+
+  function fmtMoney(n) {
     return '$' + Math.round(n).toLocaleString('en-US');
   }
 
-  function animateNum(el, target) {
-    const start = parseInt(el.dataset.current || 0);
+  function fmtHours(n) {
+    const r = Math.round(n);
+    return r + (r === 1 ? ' hr/week' : ' hrs/week');
+  }
+
+  function animateNum(el, target, formatter) {
+    const start = parseFloat(el.dataset.current || 0);
     el.dataset.current = target;
     const diff = target - start;
     const duration = 600;
@@ -930,52 +1053,107 @@
     function step(now) {
       const p = Math.min((now - startTime) / duration, 1);
       const ease = 1 - Math.pow(1 - p, 3);
-      el.textContent = fmt(start + diff * ease);
+      el.textContent = formatter(start + diff * ease);
       if (p < 1) requestAnimationFrame(step);
     }
     requestAnimationFrame(step);
   }
 
-  function calcUpdate() {
-    const revenue = parseFloat(document.getElementById('calc-revenue').value);
-    const ops     = parseFloat(document.getElementById('calc-ops').value);
-    const leads   = parseFloat(document.getElementById('calc-leads').value);
-    const team    = parseFloat(document.getElementById('calc-team').value);
-    const out     = document.getElementById('calc-output');
+  function selectedHours(selectEl) {
+    const opt = selectEl.options[selectEl.selectedIndex];
+    return parseFloat((opt && opt.dataset.hours) || 0);
+  }
 
-    if (isNaN(revenue) || isNaN(ops) || isNaN(leads) || isNaN(team)) {
-      out.innerHTML = '<p class="calc-default-msg">Fill in all four fields to see your potential.</p>';
+  let calcResultsUnlocked = false;
+
+  function calcUpdate() {
+    const revenueEl  = document.getElementById('calc-revenue');
+    const adsEl      = document.getElementById('calc-ads');
+    const capacityEl = document.getElementById('calc-capacity');
+    const opsEl      = document.getElementById('calc-ops');
+    const leadsEl    = document.getElementById('calc-leads');
+    const teamEl     = document.getElementById('calc-team');
+
+    const revenue  = parseFloat(revenueEl.value);
+    const ads      = parseFloat(adsEl.value);
+    const capacity = parseFloat(capacityEl.value);
+    const ops      = parseFloat(opsEl.value);
+    const leads    = parseFloat(leadsEl.value);
+    const team     = parseFloat(teamEl.value);
+
+    const defaultEl = document.getElementById('calc-default');
+    const gateEl    = document.getElementById('calc-gate-form');
+    const resultsEl = document.getElementById('calc-results');
+
+    const allFilled = [revenue, ads, capacity, ops, leads, team].every(v => !isNaN(v));
+
+    if (!allFilled) {
+      defaultEl.hidden = false;
+      gateEl.hidden = true;
+      resultsEl.hidden = true;
       return;
     }
 
-    const opsGain    = revenue * ops;
-    const leadsGain  = revenue * leads;
-    const teamGain   = revenue * team;
-    const total      = opsGain + leadsGain + teamGain;
-    const annualised = total * 12;
+    if (!calcResultsUnlocked) {
+      defaultEl.hidden = true;
+      gateEl.hidden = false;
+      resultsEl.hidden = true;
+      return;
+    }
 
-    out.innerHTML = `
-      <div class="calc-result-label">Additional monthly revenue potential</div>
-      <div class="calc-result-num" id="calc-big-num" data-current="0">${fmt(0)}</div>
-      <div class="calc-result-sub">+${fmt(annualised)} per year</div>
-      <div class="calc-breakdown">
-        <div class="breakdown-row">
-          <span class="breakdown-label">From systemizing ops</span>
-          <span class="breakdown-val">${fmt(opsGain)}/mo</span>
-        </div>
-        <div class="breakdown-row">
-          <span class="breakdown-label">From faster lead follow-up</span>
-          <span class="breakdown-val">${fmt(leadsGain)}/mo</span>
-        </div>
-        <div class="breakdown-row">
-          <span class="breakdown-label">From team leverage</span>
-          <span class="breakdown-val">${fmt(teamGain)}/mo</span>
-        </div>
-      </div>
-      <a class="calc-cta" href="apply.html">Let's Go Get It →</a>
-    `;
-    animateNum(document.getElementById('calc-big-num'), total);
+    defaultEl.hidden = true;
+    gateEl.hidden = true;
+    resultsEl.hidden = false;
+
+    const capacityGain = revenue * capacity;
+    const adsGain      = revenue * ads;
+    const opsGain      = revenue * ops;
+    const leadsGain    = revenue * leads;
+    const teamGain     = revenue * team;
+    const totalMonthly = capacityGain + adsGain + opsGain + leadsGain + teamGain;
+    const annualised   = totalMonthly * 12;
+
+    const totalHours = selectedHours(adsEl) + selectedHours(opsEl) + selectedHours(leadsEl) + selectedHours(teamEl);
+
+    document.getElementById('calc-money-sub').textContent = `+${fmtMoney(annualised)}/year`;
+    animateNum(document.getElementById('calc-money-num'), totalMonthly, fmtMoney);
+    animateNum(document.getElementById('calc-hours-num'), totalHours, fmtHours);
+
+    document.getElementById('bd-capacity').textContent = fmtMoney(capacityGain) + '/mo';
+    document.getElementById('bd-ads').textContent      = fmtMoney(adsGain) + '/mo';
+    document.getElementById('bd-leads').textContent    = fmtMoney(leadsGain) + '/mo';
+    document.getElementById('bd-ops').textContent      = fmtMoney(opsGain) + '/mo';
+    document.getElementById('bd-team').textContent     = fmtMoney(teamGain) + '/mo';
   }
+
+  document.addEventListener('submit', function (e) {
+    if (!e.target || e.target.id !== 'calc-gate-form') return;
+    e.preventDefault();
+
+    const form = e.target;
+    const btn = form.querySelector('.gate-submit');
+    const errorEl = document.getElementById('calc-gate-error');
+    errorEl.hidden = true;
+    btn.disabled = true;
+    btn.textContent = 'Submitting...';
+
+    const body = new URLSearchParams(new FormData(form)).toString();
+
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body
+    })
+      .then(() => {
+        calcResultsUnlocked = true;
+        calcUpdate();
+      })
+      .catch(() => {
+        btn.disabled = false;
+        btn.textContent = 'Show Me My Results →';
+        errorEl.hidden = false;
+      });
+  });
 </script>
 
 </body>

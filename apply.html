@@ -3,10 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>See If You're a Fit | AIVY Solutions</title>
+  <title>Free Audit | AIVY Solutions</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -144,28 +148,47 @@
       text-align: center; margin-top: 0.6rem;
     }
 
+    .checklist-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem 1.2rem;
+      max-height: 260px; overflow-y: auto;
+      background: var(--gray-100); border: 1px solid var(--border);
+      border-radius: 2px; padding: 1rem 1.2rem;
+    }
+    .checklist-grid .check-item {
+      display: flex; align-items: flex-start; gap: 0.55rem;
+      font-size: 0.85rem; font-weight: 400; text-transform: none;
+      letter-spacing: normal; color: var(--gray-600);
+      cursor: pointer; line-height: 1.45;
+    }
+    .check-item input[type="checkbox"] {
+      margin-top: 0.2rem; width: 15px; height: 15px;
+      accent-color: var(--green); flex-shrink: 0; cursor: pointer;
+    }
+
     @media (max-width: 640px) {
       nav { padding: 1rem 1.5rem; }
       .form-card { padding: 2rem 1.5rem; }
       .form-row { grid-template-columns: 1fr; }
+      .checklist-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
 <nav>
-  <a class="nav-logo" href="index.html"><img src="logo.jpg" alt="AIVY Solutions" /></a>
+  <a class="nav-logo" href="index.html"><img src="aivy-logo.png" alt="AIVY Solutions" /></a>
   <a class="nav-back" href="index.html">← Back to site</a>
 </nav>
 
 <div class="page-wrap">
+  <!-- TODO: embed intro video here once ready -->
   <div class="form-card">
-    <div class="section-tag">See If You're a Fit</div>
-    <h1>Tell Us About Your Business</h1>
-    <p>We work with a limited number of clients at a time, remotely and across countries. Fill this out and we'll review your info — if it's a match, we'll get you booked for a call right away.</p>
+    <div class="section-tag">Free Audit</div>
+    <h1>Get Your Free Practice Audit</h1>
+    <p>Tell us about your practice below. We'll review it personally — then you can go ahead and book your free audit call directly on our calendar.</p>
 
-    <form name="fit-application" method="POST" action="/thank-you.html" netlify data-netlify="true" netlify-honeypot="bot-field">
-      <input type="hidden" name="form-name" value="fit-application" />
+    <form name="free-audit" method="POST" action="/thank-you.html" netlify data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="free-audit" />
       <p style="display:none"><input name="bot-field" /></p>
       <div class="form-row">
         <div class="form-group">
@@ -174,24 +197,29 @@
         </div>
         <div class="form-group">
           <label for="email">Email</label>
-          <input type="email" id="email" name="email" placeholder="jane@yourbiz.com" required />
+          <input type="email" id="email" name="email" placeholder="jane@yourpractice.com" required />
         </div>
       </div>
       <div class="form-row">
         <div class="form-group">
-          <label for="industry">Industry</label>
+          <label for="website">Practice Website</label>
+          <input type="text" id="website" name="website" placeholder="yourpractice.com" required />
+        </div>
+        <div class="form-group">
+          <label for="industry">Specialty</label>
           <select id="industry" name="industry" required>
-            <option value="" disabled selected>Select your industry</option>
-            <option>E-Commerce</option>
-            <option>Healthcare / Wellness</option>
-            <option>Professional Services</option>
-            <option>Real Estate</option>
-            <option>Construction / Trades</option>
-            <option>Food &amp; Beverage</option>
-            <option>Logistics / Distribution</option>
-            <option>Other</option>
+            <option value="" disabled selected>Select your specialty</option>
+            <option>Ophthalmology / Eye Care</option>
+            <option>Dermatology</option>
+            <option>Dental / Orthodontics</option>
+            <option>Orthopedics</option>
+            <option>Physical Therapy / Chiropractic</option>
+            <option>Aesthetics / Medspa</option>
+            <option>Other Specialty Practice</option>
           </select>
         </div>
+      </div>
+      <div class="form-row">
         <div class="form-group">
           <label for="time-in-business">Time in Business</label>
           <select id="time-in-business" name="time_in_business" required>
@@ -202,10 +230,8 @@
             <option>10+ years</option>
           </select>
         </div>
-      </div>
-      <div class="form-row">
         <div class="form-group">
-          <label for="team-size">Team Size</label>
+          <label for="team-size">Staff Size</label>
           <select id="team-size" name="team_size" required>
             <option value="" disabled selected>How many people?</option>
             <option>Solo / Just me</option>
@@ -214,24 +240,49 @@
             <option>50+</option>
           </select>
         </div>
-        <div class="form-group">
-          <label for="revenue">Monthly Revenue</label>
-          <select id="revenue" name="monthly_revenue" required>
-            <option value="" disabled selected>Approximate monthly revenue</option>
-            <option>Under $10k</option>
-            <option>$10k – $50k</option>
-            <option>$50k – $200k</option>
-            <option>$200k+</option>
-          </select>
+      </div>
+      <div class="form-group">
+        <label for="revenue">Monthly Revenue</label>
+        <select id="revenue" name="monthly_revenue" required>
+          <option value="" disabled selected>Approximate monthly revenue</option>
+          <option>Under $10k</option>
+          <option>$10k – $50k</option>
+          <option>$50k – $200k</option>
+          <option>$200k+</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Do You Use a CRM or Automation Tool (e.g. GoHighLevel)?</label>
+        <div class="checklist-grid">
+          <label class="check-item"><input type="checkbox" name="automation_features" value="Automated email marketing" /> Automated email marketing</label>
+          <label class="check-item"><input type="checkbox" name="automation_features" value="Automated SMS patient recall" /> Automated SMS patient recall</label>
+          <label class="check-item"><input type="checkbox" name="automation_features" value="Missed-call text-back" /> Missed-call text-back</label>
+          <label class="check-item"><input type="checkbox" name="automation_features" value="Online self-scheduling" /> Online self-scheduling</label>
+          <label class="check-item"><input type="checkbox" name="automation_features" value="Automated review requests" /> Automated review requests</label>
+          <label class="check-item"><input type="checkbox" name="automation_features" value="Two-way SMS with patients" /> Two-way SMS with patients</label>
+          <label class="check-item"><input type="checkbox" name="automation_features" value="Lead/patient pipeline tracking" /> Lead/patient pipeline tracking</label>
+          <label class="check-item"><input type="checkbox" name="automation_features" value="Automated digital intake forms" /> Automated digital intake forms</label>
+          <label class="check-item"><input type="checkbox" name="automation_features" value="Website chat widget / chatbot" /> Website chat widget / chatbot</label>
+          <label class="check-item"><input type="checkbox" name="automation_features" value="Patient reactivation campaigns" /> Patient reactivation campaigns</label>
+          <label class="check-item"><input type="checkbox" name="automation_features" value="Birthday/anniversary auto-messages" /> Birthday/anniversary auto-messages</label>
+          <label class="check-item"><input type="checkbox" name="automation_features" value="Referral tracking &amp; automation" /> Referral tracking &amp; automation</label>
+          <label class="check-item"><input type="checkbox" name="automation_features" value="Automated new-lead follow-up" /> Automated new-lead follow-up</label>
+          <label class="check-item"><input type="checkbox" name="automation_features" value="Call tracking &amp; recording" /> Call tracking &amp; recording</label>
+          <label class="check-item"><input type="checkbox" name="automation_features" value="Membership/loyalty automation" /> Membership/loyalty automation</label>
+          <label class="check-item"><input type="checkbox" name="automation_features" value="Automated social media posting" /> Automated social media posting</label>
+          <label class="check-item"><input type="checkbox" name="automation_features" value="Automated invoicing/payment reminders" /> Automated invoicing/payment reminders</label>
+          <label class="check-item"><input type="checkbox" name="automation_features" value="Insurance verification automation" /> Insurance verification automation</label>
+          <label class="check-item"><input type="checkbox" name="automation_features" value="Waitlist automation for cancellations" /> Waitlist automation for cancellations</label>
+          <label class="check-item"><input type="checkbox" name="automation_features" value="Automated reporting/analytics dashboard" /> Automated reporting/analytics dashboard</label>
         </div>
       </div>
       <div class="form-group">
-        <label for="bottleneck">Biggest Operational Bottleneck</label>
-        <textarea id="bottleneck" name="bottleneck" placeholder="What's the one thing slowing your business down the most right now?" required></textarea>
+        <label for="bottleneck">Biggest Growth Bottleneck</label>
+        <textarea id="bottleneck" name="bottleneck" placeholder="What's the one thing slowing your practice's growth down the most right now?" required></textarea>
       </div>
       <div>
-        <button type="submit" class="form-submit">See If I'm a Fit →</button>
-        <p class="form-note">We review every submission personally. If you're a fit, you'll book a call right after this.</p>
+        <button type="submit" class="form-submit">Get My Free Audit →</button>
+        <p class="form-note">We review every submission personally, then you can book your audit call right away.</p>
       </div>
     </form>
   </div>
