@@ -25,7 +25,7 @@ function buildTransport() {
     secure: process.env.SMTP_SECURE === 'true',
     auth: {
       user: process.env.SMTP_USER,
-      pass: process.env.SMTP_PASS,
+      pass: process.env.SMTP_PASS2,
     },
   });
 }
@@ -90,7 +90,7 @@ exports.handler = async (event) => {
   const formName = payload && payload.form_name;
   const data = (payload && payload.data) || {};
 
-  if (!process.env.SMTP_HOST || !process.env.SMTP_USER || !process.env.SMTP_PASS) {
+  if (!process.env.SMTP_HOST || !process.env.SMTP_USER || !process.env.SMTP_PASS2) {
     console.error('submission-created: SMTP env vars not configured, skipping email send.');
     return { statusCode: 200, body: 'skipped (no SMTP config)' };
   }
