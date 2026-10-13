@@ -5,6 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AIVY | Growth & Backend Partner for Specialized Clinics</title>
   <meta name="description" content="AIVY is a growth, marketing, and backend partner for specialized medical clinics — so you can focus on patients, not the business behind them." />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="AIVY" />
+  <meta property="og:url" content="https://getaivy.info/" />
+  <meta property="og:title" content="You built the practice. We run everything behind it." />
+  <meta property="og:description" content="AIVY takes the website, booking, follow-up, reviews, and marketing off your plate so you can focus on patients. Book a free discovery call." />
+  <meta property="og:image" content="https://getaivy.info/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="You built the practice. We run everything behind it." />
+  <meta name="twitter:description" content="AIVY takes the website, booking, follow-up, reviews, and marketing off your plate so you can focus on patients. Book a free discovery call." />
+  <meta name="twitter:image" content="https://getaivy.info/og-image.png" />
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png" />
@@ -141,6 +153,7 @@
     .btn-outline:hover { color: var(--green-dark); }
     .btn-outline::after { content: '→'; transition: transform 0.2s; }
     .btn-outline:hover::after { transform: translateX(4px); }
+    .hero-note { margin-top: 1.5rem; font-size: 0.82rem; color: var(--gray-600); letter-spacing: 0.02em; }
 
     /* ─────────────────── SHARED ─────────────────── */
     .section-tag {
@@ -577,6 +590,12 @@
       .footer-inner { grid-template-columns: 1fr; gap: 2.5rem; }
       #vision-section, #services, #pillars, #process, #cta-section, footer { padding-left: 1.5rem; padding-right: 1.5rem; }
     }
+    @media (max-width: 480px) {
+      #hero { padding-top: 6.5rem; padding-bottom: 3.5rem; min-height: 0; }
+      .hero-text h1 { font-size: clamp(1.45rem, 7.4vw, 2rem); }
+      .hero-badge { margin-bottom: 1.3rem; }
+      .hero-text p { font-size: 1rem; margin-bottom: 1.8rem; }
+    }
   </style>
 </head>
 <body>
@@ -590,7 +609,7 @@
     <li><a href="index.html#process">Process</a></li>
     <li><a href="apply.html">Apply</a></li>
   </ul>
-  <a class="nav-cta" href="apply.html">Free Audit</a>
+  <a class="nav-cta" href="apply.html">Free Discovery Call</a>
 </nav>
 
 <!-- ═══ HERO ═══ -->
@@ -601,9 +620,10 @@
       <h1>You built the practice. We run <em>everything</em> behind it.</h1>
       <p>Private healthcare specialists — we take your entire backend off your plate and co-pilot your growth. Website, booking, follow-up, reviews, marketing. You focus on patients. We handle the rest.</p>
       <div class="hero-actions">
-        <a class="btn-green" href="apply.html">Get Your Free Audit →</a>
+        <a class="btn-green" href="apply.html">Book a Free Discovery Call →</a>
         <a class="btn-outline" href="index.html#calculator">What Am I Leaving on the Table?</a>
       </div>
+      <div class="hero-note">Currently onboarding 1–2 new practices. No pressure — just a conversation.</div>
     </div>
   </div>
 </section>
@@ -918,10 +938,10 @@
     <div class="cta-text">
       <div class="section-tag">Let's Talk</div>
       <h2>Ready to Focus on Patients Again?</h2>
-      <p>We work with a limited number of specialized clinics at a time. Book a free call and let's talk about what your growth and backend could look like — no commitment, just a straight conversation.</p>
+      <p>We're onboarding just 1–2 new practices at a time so each one gets our full attention. Book a free discovery call and let's talk about what your growth and backend could look like — no commitment, just a straight conversation.</p>
     </div>
     <div class="cta-action">
-      <a class="btn-white" href="apply.html">Book Your Free Audit →</a>
+      <a class="btn-white" href="apply.html">Book Your Free Discovery Call →</a>
       <span class="cta-note">Takes 2 minutes — we'll reach out within 1 business day</span>
     </div>
   </div>
@@ -947,7 +967,7 @@
         <li><a href="index.html#vision-section">Our Vision</a></li>
         <li><a href="index.html#services">What We Do</a></li>
         <li><a href="index.html#process">Process</a></li>
-        <li><a href="apply.html">Get Your Free Audit</a></li>
+        <li><a href="apply.html">Schedule a Discovery Call</a></li>
       </ul>
     </div>
     <div>

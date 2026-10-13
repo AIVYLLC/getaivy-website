@@ -49,7 +49,7 @@ function ownerEmailText(formName, data) {
 function leadEmailText(name) {
   return `Hi ${name},
 
-Thanks for telling us about your practice. We review every submission personally, and the next step is a quick call to walk through your free audit.
+Thanks for telling us about your practice. We review every submission personally, and the next step is a free discovery call to talk through where your practice stands and where you want it to go.
 
 Book your call here: ${CALENDLY_URL}
 
@@ -63,13 +63,13 @@ function leadEmailHtml(name) {
       <p style="font-size:16px;">Hi ${name},</p>
       <p style="font-size:16px; line-height:1.6;">
         Thanks for telling us about your practice. We review every submission personally,
-        and the next step is a quick call to walk through your free audit.
+        and the next step is a free discovery call to talk through where your practice stands and where you want it to go.
       </p>
       <p style="text-align:center; margin: 32px 0;">
         <a href="${CALENDLY_URL}"
            style="background:#4DC831; color:#ffffff; text-decoration:none; font-weight:bold;
                   padding:14px 28px; border-radius:2px; display:inline-block; font-family: Arial, sans-serif;">
-          Book Your Free Audit Call
+          Book Your Free Discovery Call
         </a>
       </p>
       <p style="font-size:14px; color:#4A6B45;">Or copy this link: ${CALENDLY_URL}</p>
@@ -115,7 +115,7 @@ exports.handler = async (event) => {
       await transporter.sendMail({
         from: fromAddress,
         to: data.email,
-        subject: 'Your Free Practice Audit — Book Your Call',
+        subject: 'Your Free Discovery Call — Pick a Time',
         text: leadEmailText(firstName(data.name)),
         html: leadEmailHtml(firstName(data.name)),
       });
