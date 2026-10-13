@@ -706,6 +706,10 @@
         <form id="calc-gate-form" name="revenue-calculator-leads" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden>
           <input type="hidden" name="form-name" value="revenue-calculator-leads" />
           <p style="display:none"><input name="bot-field" /></p>
+          <input type="hidden" name="calc_monthly" id="gate-monthly" />
+          <input type="hidden" name="calc_annual" id="gate-annual" />
+          <input type="hidden" name="calc_hours" id="gate-hours" />
+          <input type="hidden" name="calc_answers" id="gate-answers" />
           <p class="gate-intro">You're about to see exactly what it's costing you every month — and every week. Where should we send it?</p>
           <div class="gate-row">
             <div class="gate-field">
@@ -1059,28 +1063,50 @@
 
   let calcResultsUnlocked = false;
 
-  function calcUpdate() {
-    const revenueEl  = document.getElementById('calc-revenue');
-    const adsEl      = document.getElementById('calc-ads');
-    const capacityEl = document.getElementById('calc-capacity');
-    const opsEl      = document.getElementById('calc-ops');
-    const leadsEl    = document.getElementById('calc-leads');
-    const teamEl     = document.getElementById('calc-team');
+  const CALC_FIELDS = ['calc-revenue', 'calc-ads', 'calc-capacity', 'calc-ops', 'calc-leads', 'calc-team'];
 
-    const revenue  = parseFloat(revenueEl.value);
-    const ads      = parseFloat(adsEl.value);
-    const capacity = parseFloat(capacityEl.value);
-    const ops      = parseFloat(opsEl.value);
-    const leads    = parseFloat(leadsEl.value);
-    const team     = parseFloat(teamEl.value);
+  function calcTotals() {
+    const v = id => parseFloat(document.getElementById(id).value);
+    const [revenue, ads, capacity, ops, leads, team] = CALC_FIELDS.map(v);
+    if ([revenue, ads, capacity, ops, leads, team].some(isNaN)) return null;
+
+    const gains = {
+      capacity: revenue * capacity,
+      ads:      revenue * ads,
+      ops:      revenue * ops,
+      leads:    revenue * leads,
+      team:     revenue * team
+    };
+    const monthly = gains.capacity + gains.ads + gains.ops + gains.leads + gains.team;
+    const hours = ['calc-ads', 'calc-ops', 'calc-leads', 'calc-team']
+      .reduce((sum, id) => sum + selectedHours(document.getElementById(id)), 0);
+
+    return { gains, monthly, annual: monthly * 12, hours };
+  }
+
+  function calcAnswersSummary() {
+    const label = (id, name) => {
+      const el = document.getElementById(id);
+      return name + ': ' + el.options[el.selectedIndex].text;
+    };
+    return [
+      label('calc-revenue', 'Revenue'),
+      label('calc-ads', 'Paid ads'),
+      label('calc-capacity', 'Capacity'),
+      label('calc-ops', 'Operations'),
+      label('calc-leads', 'Inquiry follow-up'),
+      label('calc-team', 'Staff')
+    ].join(' | ');
+  }
+
+  function calcUpdate() {
+    const totals = calcTotals();
 
     const defaultEl = document.getElementById('calc-default');
     const gateEl    = document.getElementById('calc-gate-form');
     const resultsEl = document.getElementById('calc-results');
 
-    const allFilled = [revenue, ads, capacity, ops, leads, team].every(v => !isNaN(v));
-
-    if (!allFilled) {
+    if (!totals) {
       defaultEl.hidden = false;
       gateEl.hidden = true;
       resultsEl.hidden = true;
@@ -1098,25 +1124,15 @@
     gateEl.hidden = true;
     resultsEl.hidden = false;
 
-    const capacityGain = revenue * capacity;
-    const adsGain      = revenue * ads;
-    const opsGain      = revenue * ops;
-    const leadsGain    = revenue * leads;
-    const teamGain     = revenue * team;
-    const totalMonthly = capacityGain + adsGain + opsGain + leadsGain + teamGain;
-    const annualised   = totalMonthly * 12;
+    document.getElementById('calc-money-sub').textContent = `+${fmtMoney(totals.annual)}/year`;
+    animateNum(document.getElementById('calc-money-num'), totals.monthly, fmtMoney);
+    animateNum(document.getElementById('calc-hours-num'), totals.hours, fmtHours);
 
-    const totalHours = selectedHours(adsEl) + selectedHours(opsEl) + selectedHours(leadsEl) + selectedHours(teamEl);
-
-    document.getElementById('calc-money-sub').textContent = `+${fmtMoney(annualised)}/year`;
-    animateNum(document.getElementById('calc-money-num'), totalMonthly, fmtMoney);
-    animateNum(document.getElementById('calc-hours-num'), totalHours, fmtHours);
-
-    document.getElementById('bd-capacity').textContent = fmtMoney(capacityGain) + '/mo';
-    document.getElementById('bd-ads').textContent      = fmtMoney(adsGain) + '/mo';
-    document.getElementById('bd-leads').textContent    = fmtMoney(leadsGain) + '/mo';
-    document.getElementById('bd-ops').textContent      = fmtMoney(opsGain) + '/mo';
-    document.getElementById('bd-team').textContent     = fmtMoney(teamGain) + '/mo';
+    document.getElementById('bd-capacity').textContent = fmtMoney(totals.gains.capacity) + '/mo';
+    document.getElementById('bd-ads').textContent      = fmtMoney(totals.gains.ads) + '/mo';
+    document.getElementById('bd-leads').textContent    = fmtMoney(totals.gains.leads) + '/mo';
+    document.getElementById('bd-ops').textContent      = fmtMoney(totals.gains.ops) + '/mo';
+    document.getElementById('bd-team').textContent     = fmtMoney(totals.gains.team) + '/mo';
   }
 
   document.addEventListener('submit', function (e) {
@@ -1129,6 +1145,14 @@
     errorEl.hidden = true;
     btn.disabled = true;
     btn.textContent = 'Submitting...';
+
+    const totals = calcTotals();
+    if (totals) {
+      document.getElementById('gate-monthly').value = Math.round(totals.monthly);
+      document.getElementById('gate-annual').value  = Math.round(totals.annual);
+      document.getElementById('gate-hours').value   = Math.round(totals.hours);
+      document.getElementById('gate-answers').value = calcAnswersSummary();
+    }
 
     const body = new URLSearchParams(new FormData(form)).toString();
 
